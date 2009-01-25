@@ -11,8 +11,8 @@ Source2:	emblem-syncing.png
 Source3:	emblem-unsyncable.png
 Source4:	emblem-uptodate.png
 License: 	GPLv2+ and CC-BY-ND
-Group: 		Graphic desktop/GNOME
-Url: 		http://www.kde.org
+Group: 		Graphical desktop/GNOME
+Url: 		http://getdropbox.com/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	nautilus-devel libnotify-devel
 Requires:	nautilus wget
