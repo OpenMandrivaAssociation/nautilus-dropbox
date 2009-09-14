@@ -1,7 +1,7 @@
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
 Version: 	0.5.0
-Release: 	%mkrel 2
+Release: 	%mkrel 3
 Source0: 	http://linux.getdropbox.com/packages/%name-%version.tar.bz2
 # Icons in Source0 is not free, so we are using icons from here (CC-BY-ND license):
 # http://vathanx.deviantart.com/art/Dropbox-Icon-106941298
