@@ -14,7 +14,7 @@ License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
 Url: 		http://getdropbox.com/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: 	nautilus-devel libnotify-devel pygtk2.0-devel
+BuildRequires: 	nautilus-devel libnotify-devel pygtk2.0-devel python-docutils
 Requires:	nautilus wget
 
 %description 
