@@ -1,7 +1,7 @@
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
 Version: 	1.4.0
-Release: 	2
+Release: 	3
 Source0: 	http://linux.getdropbox.com/packages/%name-%version.tar.bz2
 # Currently all images in package are licensed under CC BY-ND, so third-party files are not needed
 #Source1:	http://fc04.deviantart.com/fs39/f/2008/356/b/9/b9722db2a11fa3092f3b902b681866a9.zip
