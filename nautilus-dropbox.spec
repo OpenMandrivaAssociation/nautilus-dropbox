@@ -1,8 +1,10 @@
+#define _disable_rebuild_configure 1
+
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
-Version: 	1.4.0
-Release: 	3
-Source0: 	http://linux.getdropbox.com/packages/%name-%version.tar.bz2
+Version: 	2015.10.28
+Release: 	1
+Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 # Currently all images in package are licensed under CC BY-ND, so third-party files are not needed
 #Source1:	http://fc04.deviantart.com/fs39/f/2008/356/b/9/b9722db2a11fa3092f3b902b681866a9.zip
 #Source2:	emblem-syncing.png
@@ -45,7 +47,7 @@ to download and install it automatically.
 %files -n dropbox
 %doc AUTHORS
 %_bindir/*
-%_mandir/*
+%_mandir/man1/*
 %_datadir/applications/dropbox.desktop
 %_iconsdir/hicolor/*/*/*
 
@@ -53,9 +55,11 @@ to download and install it automatically.
 
 %prep
 %setup -q
+sed -i 's/python/python2/' configure.in Makefile.*
+autoreconf -fiv
 
 %build
-%configure2_5x --disable-static
+%configure --disable-static PYTHON=%__python2
 %make
 
 
