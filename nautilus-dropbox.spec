@@ -1,5 +1,3 @@
-#define _disable_rebuild_configure 1
-
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
 Version: 	2015.10.28
@@ -13,8 +11,12 @@ Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
 Url: 		http://getdropbox.com/
-BuildRequires: 	nautilus-devel libnotify-devel pygtk2.0-devel python-docutils
-Requires:	nautilus dropbox
+BuildRequires:	nautilus-devel
+BuildRequires:	libnotify-devel
+BuildRequires:	pygtk2.0-devel
+BuildRequires:	python2-docutils
+Requires:	nautilus
+Requires:	dropbox
 
 
 %description 
