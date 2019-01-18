@@ -61,16 +61,13 @@ to download and install it automatically.
 
 %prep
 %setup -q
-sed -i 's/python/python2/' configure.in Makefile.*
+
 autoreconf -fiv
-
-%build
-%configure --disable-static PYTHON=%__python2
-%make
-
+%configure --disable-static
+%make_build
 
 %install
-%{makeinstall_std}
+%make_install
 
 rm -f %buildroot%_libdir/nautilus/extensions-3.0/*.la
 rm -f %buildroot%_iconsdir/hicolor/*/*/*.icon
