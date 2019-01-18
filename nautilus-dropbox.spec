@@ -19,6 +19,8 @@ BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(pygobject-3.0)
 #BuildRequires:	pkgconfig(pygtk-2.0)
 BuildRequires:	python-docutils
+BuildRequires:  python-gi
+BuildRequires:  python3egg(pygobject)
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python
 Requires:	nautilus
