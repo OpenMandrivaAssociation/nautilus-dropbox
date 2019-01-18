@@ -1,6 +1,6 @@
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
-Version: 	2015.10.28
+Version: 	2018.11.28
 Release: 	1
 Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 # Currently all images in package are licensed under CC BY-ND, so third-party files are not needed
@@ -11,10 +11,14 @@ Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
 Url: 		http://getdropbox.com/
-BuildRequires:	nautilus-devel
-BuildRequires:	libnotify-devel
-BuildRequires:	pygtk2.0-devel
-BuildRequires:	python2-docutils
+
+BuildRequires:  pkgconfig(libnautilus-extension)
+BuildRequires:	pkgconfig(libnotify)
+BuildRequires:  pkgconfig(pygobject-3.0)
+BuildRequires:	pkgconfig(pygtk-2.0)
+BuildRequires:	python-docutils
+BuildRequires:  pkgconfig(python)
+BuildRequires:  python
 Requires:	nautilus
 Requires:	dropbox
 
