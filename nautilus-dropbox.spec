@@ -8,6 +8,8 @@ Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 #Source2:	emblem-syncing.png
 #Source3:	emblem-unsyncable.png
 #Source4:	emblem-uptodate.png
+# https://github.com/dropbox/nautilus-dropbox/pull/57
+Patch0: nautilus-dropbox_0002-Use-GIR-bindings-instead-of-pygtk.patch
 License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
 Url: 		http://getdropbox.com/
@@ -15,7 +17,7 @@ Url: 		http://getdropbox.com/
 BuildRequires:  pkgconfig(libnautilus-extension)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(pygobject-3.0)
-BuildRequires:	pkgconfig(pygtk-2.0)
+#BuildRequires:	pkgconfig(pygtk-2.0)
 BuildRequires:	python-docutils
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python
