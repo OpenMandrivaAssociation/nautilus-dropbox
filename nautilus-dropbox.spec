@@ -63,6 +63,7 @@ to download and install it automatically.
 
 %prep
 %setup -q
+%autopatch -p1
 
 autoreconf -fiv
 %configure --disable-static
