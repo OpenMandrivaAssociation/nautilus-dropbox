@@ -39,7 +39,6 @@ and installed.
 %files
 %doc AUTHORS
 %doc COPYING
-%doc README
 %_libdir/nautilus/extensions-3.0/libnautilus-dropbox.so
 %_datadir/%name/*
 
