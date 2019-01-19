@@ -10,6 +10,8 @@ Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 #Source4:	emblem-uptodate.png
 # https://github.com/dropbox/nautilus-dropbox/pull/57
 Patch0: nautilus-dropbox_0002-Use-GIR-bindings-instead-of-pygtk.patch
+# Dropbox (installer) still can't work with python3...
+Patch1: use_python2.patch
 License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
 Url: 		http://getdropbox.com/
@@ -18,11 +20,11 @@ BuildRequires:  pkgconfig(libnautilus-extension)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(pygobject-3.0)
 #BuildRequires:	pkgconfig(pygtk-2.0)
-BuildRequires:	python-docutils
-BuildRequires:  python-gi
-BuildRequires:  python3egg(pygobject)
-BuildRequires:  pkgconfig(python)
-BuildRequires:  python
+BuildRequires:	python2-docutils
+BuildRequires:  python2-gi
+#BuildRequires:  python3egg(pygobject)
+BuildRequires:  pkgconfig(python2)
+BuildRequires:  python2
 Requires:	nautilus
 Requires:	dropbox
 
