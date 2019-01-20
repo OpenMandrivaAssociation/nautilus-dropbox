@@ -1,6 +1,6 @@
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
-Version: 	2015.10.28
+Version: 	2018.11.28
 Release: 	1
 Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 # Currently all images in package are licensed under CC BY-ND, so third-party files are not needed
@@ -8,13 +8,23 @@ Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 #Source2:	emblem-syncing.png
 #Source3:	emblem-unsyncable.png
 #Source4:	emblem-uptodate.png
+# https://github.com/dropbox/nautilus-dropbox/pull/57
+Patch0: nautilus-dropbox_0002-Use-GIR-bindings-instead-of-pygtk.patch
+# Dropbox (installer) still can't work with python3...
+Patch1: use_python2.patch
 License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
 Url: 		http://getdropbox.com/
-BuildRequires:	nautilus-devel
-BuildRequires:	libnotify-devel
-BuildRequires:	pygtk2.0-devel
+
+BuildRequires:  pkgconfig(libnautilus-extension)
+BuildRequires:	pkgconfig(libnotify)
+BuildRequires:  pkgconfig(pygobject-3.0)
+#BuildRequires:	pkgconfig(pygtk-2.0)
 BuildRequires:	python2-docutils
+BuildRequires:  python2-gi
+#BuildRequires:  python3egg(pygobject)
+BuildRequires:  pkgconfig(python2)
+BuildRequires:  python2
 Requires:	nautilus
 Requires:	dropbox
 
@@ -29,7 +39,6 @@ and installed.
 %files
 %doc AUTHORS
 %doc COPYING
-%doc README
 %_libdir/nautilus/extensions-3.0/libnautilus-dropbox.so
 %_datadir/%name/*
 
@@ -57,16 +66,14 @@ to download and install it automatically.
 
 %prep
 %setup -q
-sed -i 's/python/python2/' configure.in Makefile.*
+%autopatch -p1
+
 autoreconf -fiv
-
-%build
-%configure --disable-static PYTHON=%__python2
-%make
-
+%configure --disable-static
+%make_build
 
 %install
-%{makeinstall_std}
+%make_install
 
 rm -f %buildroot%_libdir/nautilus/extensions-3.0/*.la
 rm -f %buildroot%_iconsdir/hicolor/*/*/*.icon
