@@ -21,7 +21,7 @@ BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(pygobject-3.0)
 #BuildRequires:	pkgconfig(pygtk-2.0)
 BuildRequires:	python2-docutils
-BuildRequires:  python2-gobject
+BuildRequires:  python2-gi
 #BuildRequires:  python3egg(pygobject)
 BuildRequires:  pkgconfig(python2)
 BuildRequires:  python2
