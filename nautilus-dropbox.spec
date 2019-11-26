@@ -12,6 +12,7 @@ BuildRequires:  pkgconfig(pygobject-3.0)
 BuildRequires:	python3dist(docutils)
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python
+BuildRequires:  python-gi
 Requires:	nautilus
 Requires:	dropbox
 
