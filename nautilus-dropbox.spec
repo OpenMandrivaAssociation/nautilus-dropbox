@@ -1,30 +1,17 @@
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
-Version: 	2018.11.28
+Version: 	2019.02.14
 Release: 	1
 Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
-# Currently all images in package are licensed under CC BY-ND, so third-party files are not needed
-#Source1:	http://fc04.deviantart.com/fs39/f/2008/356/b/9/b9722db2a11fa3092f3b902b681866a9.zip
-#Source2:	emblem-syncing.png
-#Source3:	emblem-unsyncable.png
-#Source4:	emblem-uptodate.png
-# https://github.com/dropbox/nautilus-dropbox/pull/57
-Patch0: nautilus-dropbox_0002-Use-GIR-bindings-instead-of-pygtk.patch
-# Dropbox (installer) still can't work with python3...
-Patch1: use_python2.patch
 License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
 Url: 		http://getdropbox.com/
-
 BuildRequires:  pkgconfig(libnautilus-extension)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(pygobject-3.0)
-#BuildRequires:	pkgconfig(pygtk-2.0)
-BuildRequires:	python2-docutils
-BuildRequires:  python2-gi
-#BuildRequires:  python3egg(pygobject)
-BuildRequires:  pkgconfig(python2)
-BuildRequires:  python2
+BuildRequires:	python3dist(docutils)
+BuildRequires:  pkgconfig(python)
+BuildRequires:  python
 Requires:	nautilus
 Requires:	dropbox
 
@@ -48,6 +35,9 @@ and installed.
 Group:		Networking/File transfer
 Summary:	Dropbox client daemon
 License:	GPLv2+
+Requires: python-gpg
+Requires:	wget
+Requires:	python-gi
 
 %description -n dropbox
 Command-line Dropbox client. Currently not all features are realised.
