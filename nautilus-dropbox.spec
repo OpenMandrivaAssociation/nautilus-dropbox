@@ -6,6 +6,7 @@ Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
 Url: 		http://getdropbox.com/
+BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  pkgconfig(libnautilus-extension-4)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(pygobject-3.0)
