@@ -17,20 +17,17 @@ BuildRequires:  python-gi
 Requires:	nautilus
 Requires:	dropbox
 
-
 %description 
 Dropbox extension for Nautilus.
 
 It requires proprietary dropbox daemon that will be automatically downloaded
 and installed.
 
-
 %files
 %doc AUTHORS
 %doc COPYING
-#_libdir/nautilus/extensions-3.0/libnautilus-dropbox.so
-%_datadir/%name/*
-
+%{_libdir}/nautilus/extensions-4/libnautilus-dropbox.so
+%{_datadir}/%name/*
 #--------------------------------------------------------------------
 
 %package -n dropbox
