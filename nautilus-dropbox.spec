@@ -28,7 +28,7 @@ and installed.
 %files
 %doc AUTHORS
 %doc COPYING
-%_libdir/nautilus/extensions-3.0/libnautilus-dropbox.so
+#_libdir/nautilus/extensions-3.0/libnautilus-dropbox.so
 %_datadir/%name/*
 
 #--------------------------------------------------------------------
