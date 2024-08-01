@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
 Version: 	2024.04.17
