@@ -1,11 +1,11 @@
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
-Version: 	2023.09.06
+Version: 	2024.04.17
 Release: 	1
-Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
+Source0:	https://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 License: 	GPLv2+ and CC-BY-ND
 Group: 		Graphical desktop/GNOME
-Url: 		http://getdropbox.com/
+Url: 		https://getdropbox.com/
 BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  pkgconfig(libnautilus-extension-4)
 BuildRequires:	pkgconfig(libnotify)
