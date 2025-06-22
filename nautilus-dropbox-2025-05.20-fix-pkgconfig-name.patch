@@ -1,0 +1,12 @@
+diff -rupN nautilus-dropbox-2025.05.20.old/configure.ac nautilus-dropbox-2025.05.20/configure.ac
+--- nautilus-dropbox-2025.05.20.old/configure.ac	2025-05-30 21:00:58.000000000 +0200
++++ nautilus-dropbox-2025.05.20/configure.ac	2025-06-22 16:38:43.566166107 +0200
+@@ -92,7 +92,7 @@ fi
+ AC_MSG_RESULT([${NAUTILUS_EXTENSION_DIR}])
+ AC_SUBST(NAUTILUS_EXTENSION_DIR)
+ 
+-NAUTILUS_VERSION=`$PKG_CONFIG --modversion libnautilus-extension`
++NAUTILUS_VERSION=`$PKG_CONFIG --modversion libnautilus-extension-4`
+ if test -n "$NAUTILUS_VERSION"; then
+     NAUTILUS_VERSION_MAJOR=`echo -n $NAUTILUS_VERSION | cut -d . -f 1`
+     NAUTILUS_VERSION_MINOR=`echo -n $NAUTILUS_VERSION | cut -d . -f 2`
