@@ -3,7 +3,7 @@
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
 Version:		2025.05.20
-Release:		1
+Release:		2
 License:		GPLv2+ and CC-BY-ND
 Group:		Graphical desktop/GNOME
 Url:		https://getdropbox.com/
@@ -41,7 +41,7 @@ Group:		Networking/File transfer
 Summary:	Dropbox client daemon
 License:	GPLv2+
 Requires:	python-gi
-Requires:	python-gpg
+Requires:	python-gpgme
 Requires:	wget
 
 %description -n dropbox
