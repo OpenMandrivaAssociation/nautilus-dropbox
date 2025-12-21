@@ -10,6 +10,11 @@ Url:		https://getdropbox.com/
 Source0:	https://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 Patch0:		nautilus-dropbox-2025-05.20-fix-env-shebang.patch
 Patch1:		nautilus-dropbox-2025-05.20-fix-pkgconfig-name.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:		python
 BuildRequires:		python-docutils
 BuildRequires:		python-gi
