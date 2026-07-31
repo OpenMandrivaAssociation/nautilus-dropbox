@@ -3,7 +3,7 @@
 
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
-Version:		2026.01.15
+Version:		2026.05.06
 Release:		1
 License:		GPLv2+ and CC-BY-ND
 Group:		Graphical desktop/GNOME
