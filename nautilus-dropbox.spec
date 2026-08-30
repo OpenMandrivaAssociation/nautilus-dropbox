@@ -3,33 +3,32 @@
 
 Summary:	Dropbox extension for Nautilus
 Name:		nautilus-dropbox
-Version:		2026.05.06
-Release:		1
-License:		GPLv2+ and CC-BY-ND
+Version:	2026.05.06
+Release:	2
+License:	GPLv2+ and CC-BY-ND
 Group:		Graphical desktop/GNOME
 Url:		https://getdropbox.com/
 Source0:	https://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 Patch0:		nautilus-dropbox-2025-05.20-fix-env-shebang.patch
 Patch1:		nautilus-dropbox-2025-05.20-fix-pkgconfig-name.patch
-BuildRequires:		autoconf
-BuildRequires:		automake
-BuildRequires:		gnome-common
-BuildRequires:		libtool-base
-BuildRequires:		make
-BuildRequires:		python
-BuildRequires:		slibtool
-BuildRequires:		pkgconfig(glib-2.0) >= 2.14.0
-BuildRequires:		pkgconfig(gtk4)
-BuildRequires:		pkgconfig(libnautilus-extension-4)
-BuildRequires:		pkgconfig(libnotify)
-BuildRequires:		pkgconfig(pygobject-3.0)
-BuildRequires:		pkgconfig(python)
-BuildRequires:		python3dist(docutils)
-BuildRequires:		python3dist(pygobject)
+
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	slibtool
+BuildRequires:	make
+BuildRequires:	python
+BuildRequires:	pkgconfig(glib-2.0) >= 2.14.0
+BuildRequires:	pkgconfig(gtk4)
+BuildRequires:	pkgconfig(libnautilus-extension-4)
+BuildRequires:	pkgconfig(libnotify)
+BuildRequires:	pkgconfig(pygobject-3.0)
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(docutils)
+BuildRequires:	python%{pyver}dist(pygobject)
 Requires:	nautilus
 Requires:	dropbox
 
-%description 
+%description
 Dropbox extension for Nautilus.
 It requires proprietary dropbox daemon that will be automatically downloaded
 and installed.
@@ -37,7 +36,7 @@ and installed.
 %files
 %doc AUTHORS ChangeLog
 %license COPYING
-#{_libdir}/nautilus/extensions-4/libnautilus-dropbox.so
+%{_libdir}/nautilus/extensions-4/libnautilus-dropbox.so
 %{_datadir}/%{name}/*
 
 #--------------------------------------------------------------------
@@ -47,7 +46,7 @@ Group:		Networking/File transfer
 Summary:	Dropbox client daemon
 License:	GPLv2+
 Requires:	python-gpgme
-Requires:	python3dist(pygobject)
+Requires:	python%{pyver}dist(pygobject)
 Requires:	wget
 
 %description -n dropbox
@@ -66,13 +65,12 @@ to download and install it automatically.
 
 %prep
 %autosetup -p1
-
+# automake 1.13+ rejects AM_CONFIG_HEADER
+sed -i -e 's/^AM_CONFIG_HEADER/AC_CONFIG_HEADERS/' configure.ac
 
 %build
-autoreconf -fiv
 %configure --disable-static
-%make_build
-
+%make_build LIBTOOL=slibtool-shared
 
 %install
-%make_install
+%make_install LIBTOOL=slibtool-shared
